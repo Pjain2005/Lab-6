@@ -8,8 +8,24 @@ def encode(password):
   return result
 
 # this function decodes the password. The password, in this case, being the encoded password.
+# decode function written by Daniela V.
 def decode(password):
-  pass
+  result = ''
+  # iterate through password characters
+  for digit in password:
+    # if digit is greater than or equal to 3, subtract 3
+    if int(digit) >= 3:
+      digit = int(digit) - 3
+    # specific assignments for numbers less than 3
+    elif digit == '0':
+      digit = '7'
+    elif digit == '1':
+      digit = '8'
+    elif digit == '2':
+      digit = 9
+    result += str(digit)
+  return result
+
 # this is where the main function starts
 def main(): 
   while True:
